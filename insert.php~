@@ -1,0 +1,29 @@
+<!-- Include Database connections info. -->
+<?php require_once 'config.php'; ?>
+
+<!-- Verify if user exists for login -->
+<?php
+
+$con = mysql_connect(DB_SERVER,DB_USER,DB_PASSWORD);
+ if (!$con) {
+	 die('Could not connect: ' . mysql_error());
+	 }
+	 mysql_select_db(DB_NAME, $con);
+	
+	}
+
+if(isset($_GET['site_url']) && isset($_GET['site_name'])){
+
+$url= $_GET['site_url'];
+$sitename= $_GET['site_name'];
+
+$insertSite_sql = 'INSERT INTO SITE (site_url, site_name) VALUES('. $url. ',' . $sitename. ')';
+$insertSite= mysql_query($insertSite_sql) or die(mysql_error());
+
+// If is set URL variables and insert is ok, show the site name 
+echo $sitename;
+} else { 
+echo 'Error! Please fill all fileds!';
+}
+
+?>
