@@ -1,0 +1,48 @@
+<script src="js/jquery.min.js"></script>
+<script src="js/ajaxupload.3.6.js"></script>
+<script src="js/jquery.ui.widget.js"></script>
+<script src="js/jquery.ui.accordion.js"></script>
+
+<script src="main.js"></script>
+
+<link rel="stylesheet" href="templates/css/jquery.ui.theme.css" type="text/css" />
+<link rel="stylesheet" href="templates/css/jquery.ui.accordion.css" type="text/css" />
+<link rel="stylesheet" href="main.css" type="text/css" />
+
+<div class="examples">
+
+    <div id="accordion" class="accordion">
+        <h3><a href="#">Ajax file upload into (hidden) iframe</a></h3>
+        <div class="sample_1">
+
+            <form id="file_upload_form" method="post" enctype="multipart/form-data" action="index.php" target="upload_target">
+                <input name="file" id="file" size="50" type="file" />
+                <input type="submit" name="action" value="Upload" /><br />
+                <input type="text" name="variable" value="extra values" />
+                <input type="hidden" name="sample" value="1" />
+            </form>
+            <button onclick="$('#upload_target').slideToggle(500)" >show iframe</button>
+            <iframe id="upload_target" name="upload_target" src=""></iframe>
+            <div style="clear:both;"></div>
+            <div id="response1">awaiting for upload</div>
+
+            <div style="clear:both;"></div>
+            <p>
+                First example of ajax upload. Most easy one. Just choose any image and clock 'Upload' button to process. Also you can send visible or hidden extra information. In iframe I will draw result of work. Plus we have response behavior of upload result.
+            </p>
+        </div>
+
+        <h3><a href="#">Ajax file upload using ajaxupload.3.6.js library</a></h3>
+        <div class="sample_2">
+
+            <div id="ajxiupload2">Upload button</div>
+            <div id="response2">awaiting for upload</div>
+
+            <div style="clear:both;"></div>
+            <p>
+                Another good sample. Now we will using special library - ajaxupload.3.6.js. This library from <a rel="nofollow" href="http://valums.com/ajax-upload/">here</a>. Both samples very interactive and useful. Try it!
+            </p>
+        </div>
+    </div>
+
+</div>
